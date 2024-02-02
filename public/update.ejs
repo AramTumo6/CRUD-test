@@ -1,24 +1,13 @@
-table tr td{
-    margin: 10px;
-    padding: 10px;
-    text-align: center;
-}
-
-.update{
-    background-color: green;
-    margin: 10px;
-    padding: 5px;
-    width: 100px;
-    color: white;
-}
-.delete{
-    background-color: red;
-    margin: 10px;
-    width: 100px;
-    padding: 5px;
-    color: white;
-}
-body {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f7f7f7;
     margin: 20px;
@@ -101,3 +90,18 @@ a.update:hover, a.delete:hover {
     opacity: 0.8;
 }
 
+
+    </style>
+    </table>
+    <form action="/updateData" method="post">
+        <input id="PrName" type="text" required name="name" placeholder="Name" value = "<%= obj.name %>"><br><br>
+        <input id="PrAge" type="number" name="age" placeholder="Age" value = "<%= obj.age %>"><br><br>
+        <input id="PrEye" type="text" name="eye" placeholder="Eye"  value = "<%= obj.eye %>"><br><br>
+        <input id="PrGender" type="text" name="gender" placeholder="Gender"  value = "<%= obj.gender %>"><br><br>
+        <input id="PrSurname" type="text" name="surname" placeholder="Surname"  value = "<%= obj.surname %>"><br><br>
+        <!-- <input id="PrUUID" type="text" name="uuid" placeholder="UUID"  value = "<%= obj.uuid %>"><br><br> -->
+        <input  type="hidden" name="id"   value = "<%= obj._id %>"><br><br>
+        <input type="submit">
+    </form>
+</body>
+</html>

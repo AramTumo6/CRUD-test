@@ -1,20 +1,13 @@
+let usPassword = document.getElementById('usPassword');
+let usName = document.getElementById('usName');
+let usEmail = document.getElementById('usEmail');
 
-let button = document.getElementById("sub").addEventListener("click", myFunction);
-//let Delete = document.getElementById("button").addEventListener("click", buttonFunction);
-
-function myFunction(params) {
-    let nameInput = document.getElementById("name").value;
-    let ageInput = document.getElementById("age").value;
-    let EmailInput = document.getElementById("email").value;
-
-    fetch("/addName", {
+function getVal() {
+    var response =  fetch("http://localhost:3000/addName", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json;charset=utf-8"
+            "Content-Type": "application/json"
         },
-        body:JSON.stringify({name : nameInput, age : ageInput, email : EmailInput} )
-    });
+        body: JSON.stringify({ name: usName.value, password: usPassword.value, email:usEmail.value })
+    })
 }
-
-
-
