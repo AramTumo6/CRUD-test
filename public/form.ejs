@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>City</td>
+            <td>Update</td>
+            <td>Delete</td>
+        </tr>
+         <% obj.forEach(function(justOne) { %>
+        <tr>
+            <td><%= justOne.theaterId %></td>
+            <td><%= justOne.location.address.city %></td>
+            <td><a class="update" href="update?id=<%= justOne._id %>">Update</a></td>
+            <td><a class="delete" href="delete?id=<%= justOne._id %>">Delete</a></td>
+        </tr>
+    <% }); %>
+    </table>
+
+
+        <ul>
+            <% obj.forEach(function(justOne) { %>
+                <li>
+                    Id - <strong><%= justOne.theaterId %></strong> <br>
+                    City - <strong><%= justOne.location.address.city %></strong> /
+                    State - <strong><%= justOne.location.address.state %></strong> /
+                    Zip code - <strong><%= justOne.location.address.zipcode %></strong> /
+                    Street - <strong><%= justOne.location.address.street1 %></strong> /
+                    <button type="button" id="button" >Delete</button> <br> <br>
+                </li>
+        <% }); %>
+        </ul>
+        <input type="text" required name="name" placeholder="Please type your name" id="name"><br><br>
+        <input type="number" name="age" placeholder="Please type your name" id="age"><br><br>
+        <input type="email" name="email" placeholder="Please type your name" id="email"><br><br>
+        <input type="submit" id="sub">
+
+        <script src="script.js"></script>
+</body>
+</html>
+
